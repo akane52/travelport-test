@@ -1,14 +1,20 @@
 import React from "react";
-import {  Container, CardLastName, CardFirstName, CardEmail, CardImage} from "./styles";
-
+import {  Container, CardLastName, CardFirstName, CardEmail, CardImage, InformationContainer, NameSurnameContainer, EmailContainer} from "./styles";
 const PersonalCards = ({picture, firstName, secondName, email}) =>{
     return (
         <div>
             <Container>
                 <CardImage src={picture}/>
-                <CardFirstName>{firstName}</CardFirstName>
-                <CardLastName>{secondName}</CardLastName>
-                <CardEmail>{email}</CardEmail>
+                <InformationContainer>
+                    <NameSurnameContainer> 
+                        <CardFirstName>{firstName}</CardFirstName>
+                        <CardLastName>{secondName}</CardLastName>
+                    </NameSurnameContainer>
+                    <EmailContainer>
+                    <CardEmail>{email}</CardEmail>
+                    </EmailContainer>
+                </InformationContainer>
+                
             </Container>
         </div>
     )
