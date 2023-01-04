@@ -1,5 +1,5 @@
 import React from "react";
-import {  Container, CardLastName, CardFirstName, CardEmail, CardImage} from "./styles";
+import {  Container, CardLastName, CardFirstName, CardEmail, CardImage, InformationContainer, NameSurnameContainer, EmailContainer} from "./styles";
 import { data } from '../../dataSamples/personalData';
 
 const PersonalCards = () =>{
@@ -9,9 +9,15 @@ const PersonalCards = () =>{
             return(
                 <Container>
                     <CardImage src={item.picture.medium}/>
-                        <CardFirstName>{item.name.first}</CardFirstName>
-                        <CardLastName>{item.name.last}</CardLastName>
-                    <CardEmail>{item.email}</CardEmail>
+                    <InformationContainer>
+                        <NameSurnameContainer>
+                            <CardFirstName>{item.name.first}</CardFirstName>
+                            <CardLastName>{item.name.last}</CardLastName>
+                        </NameSurnameContainer>
+                        <EmailContainer>
+                            <CardEmail>{item.email}</CardEmail>
+                        </EmailContainer>
+                    </InformationContainer>
                 </Container>
             )
         })}
